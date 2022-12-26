@@ -37,7 +37,7 @@ Intent的组成部分如下表所示：
       intent.setComponent( component);
    ```
 2. 隐式Inte nt，没有明确指定要跳转的类名， 只给出一个动作让系统匹配拥有相同字串定义的目标，属于模糊匹配。
-   因为我们常常不希望直接暴露源码的类名，只给出一个事先定义好的名称，这样大家约定俗成、按图索骥就好，所以隐式Intent 起到了过滤作用。
+   - 因为我们常常不希望直接暴露源码的类名，只给出一个事先定义好的名称，这样大家约定俗成、按图索骥就好，所以隐式Intent 起到了过滤作用。
    这个定义好的动作名称是一个字符串，可以是自己定义的动作，也可以是己有的系统动作。系统动作的取值说明如下表所示：
    | Intent 类的系统动作常量名 |       系统动作的常量值       |             说明              |
    | :-----------------------: | :--------------------------: | :---------------------------: |
@@ -50,12 +50,12 @@ Intent的组成部分如下表所示：
    |       ACTION_ANSWER       | android.intent.action.ANSWER |            接电话             |
    |       ACTION_SEARCH       | android.intent.action.SEARCH | 导航栏上SearchView 的搜索动作 |
       
-   这个动作名称通过setAction 方法指定，也可以通过构造函数Ir出nt(String action ）直接生成 Intent 对象。当然，由于动作是模糊匹配，因此有时需要更详细的路径，比如知道某人住在天
+   - 这个动作名称通过setAction 方法指定，也可以通过构造函数Ir出nt(String action ）直接生成 Intent 对象。当然，由于动作是模糊匹配，因此有时需要更详细的路径，比如知道某人住在天
    通苑小区，并不能直接找到他家，还得说明他住在天通苑的哪一期、哪号楼、哪一层、哪一个 单元。Uri 和Category 便是这样的路径与门类信息， Uri 数据可通过构造函数Intent(String action,
    Uri uri ）在生成对象时一起指定，也可通过setData 方法指定Cse tData 这个名字有歧义，实际就是setUri) ; Category 可通过addCategory 方法指定，之所以用add 而不用set 方法，是因为一
    个Intent 可同时设置多个Category ， 一起进行过滤。
 
-   隐式Intent 还用到了过滤器的概念，即把不符合匹配条件的过滤掉，剩下符合条件的按照优先顺序调用。创建一个Android 工程， AndroidManifest.xml 里的intent“filter 就是XML 中的
+   - 隐式Intent 还用到了过滤器的概念，即把不符合匹配条件的过滤掉，剩下符合条件的按照优先顺序调用。创建一个Android 工程， AndroidManifest.xml 里的intent“filter 就是XML 中的
    过滤器。比如下面这个最常见的主页面MainAcitivity, activity 节点下面便设置了action 和category 的过滤条件。其中， android .intent.action.MAIN 表示App 的入口动作，
    android. intent.category .LA UN CHER 表示在App 启动时调用。
 
