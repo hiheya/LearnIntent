@@ -16,14 +16,15 @@ Intent的组成部分如下表所示：
 |   Type    |   setType    |       数据类型，用于指定Data 类型的定义       |
 |  Extras   |   putExtra   |       扩展信息，用于指定装载的参数信息        |
 |   Flags   |   setFlags   | 标志位，用于指定Intent 的运行模式（启动标志） |
-表达 Intent 的来往路径有两种方式： 一种是显式Intent，另一种是隐式Intent
+
+   表达 Intent 的来往路径有两种方式： 一种是显式Intent，另一种是隐式Intent
 ## 二. 显式Intent 与 隐式Intent
 1. 显式Intent
    在声明一个Intent 对象时，需要指定两个参数，第一个参数表示跳转的来源页面，第二个 参数表示接下来要跳转到的页面类。具体的声明方式有如下3 种：
 （1）.在构造函数中指定， 示例代码如下：
-   ```java
+```java
       Intent intent= new Intent(this, ActResponseActivity.class);
-   ```
+```
 （2）.调用setClass 方法指定， 示例代码如下：
    ```java
       Intent intent = new Intent();
